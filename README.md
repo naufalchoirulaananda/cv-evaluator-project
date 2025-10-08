@@ -33,7 +33,7 @@ Because API quotas can be limited, this project runs in simulation mode, meaning
 
 - Clone and install dependencies
 ```bash
-  https://github.com/naufalchoirulaananda/rakamin-cv-evaluator-project.git
+  https://github.com/naufalchoirulaananda/cv-evaluator-project.git
 ```
 ```bash
   cd cv-evaluator
@@ -182,5 +182,6 @@ rakamin-cv-evaluator-project/
 
 Naufal Choirul Ananda
 - [@naufalchoirulaananda](https://github.com/naufalchoirulaananda)
+
 
 
