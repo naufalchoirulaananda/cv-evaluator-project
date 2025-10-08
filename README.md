@@ -1,7 +1,7 @@
 
 # CV Evaluator (Backend Case Study)
 
-This project was built as part of the Product Engineer (Backend) case study from Rakamin.
+This project was built as part of the Product Engineer (Backend) case study.
 
 The goal is to design a simple backend system that can automatically evaluate a candidate’s CV and project report based on a given job description and case study brief.
 
@@ -182,4 +182,5 @@ rakamin-cv-evaluator-project/
 
 Naufal Choirul Ananda
 - [@naufalchoirulaananda](https://github.com/naufalchoirulaananda)
+
 
