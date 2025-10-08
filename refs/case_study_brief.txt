@@ -1,0 +1,148 @@
+CASE STUDY BRIEF
+================
+
+Hello! Thank you for applying with us as a backend developer. 
+This mini project should be completed within 5 days after you have received this document. 
+Please spare your time to complete this project with the best results. 
+We are really pleased to answer your questions if there are unclear things.
+
+
+OBJECTIVE
+----------
+
+Your mission is to build a backend service that automates the initial screening of a job application. 
+The service will receive a candidate's CV and a project report, evaluate them against a specific job description and a case study brief, 
+and produce a structured, AI-generated evaluation report.
+
+
+CORE LOGIC & DATA FLOW
+-----------------------
+
+The system operates with a clear separation between inputs and reference documents.
+
+
+Candidate-Provided Inputs (Data to be Evaluated):
+1. Candidate CV – The candidate's resume (PDF).
+2. Project Report – The candidate's project report for this take-home case study (PDF).
+
+System-Internal Documents (Ground Truth for Comparison):
+1. Job Description – A document detailing the requirements and responsibilities for the role.
+   You may use the job description of the position you are currently applying for.
+   To ensure accurate vector retrieval, you may ingest multiple job descriptions.
+2. Case Study Brief – This document, used as the ground truth for Project Report evaluation.
+3. Scoring Rubric – A predefined set of parameters for evaluating the CV and Project Report.
+
+We want to see your ability to combine backend engineering with AI workflows, including prompt design, LLM chaining, retrieval, and resilience.
+
+
+DELIVERABLES
+------------
+
+1. BACKEND SERVICE (API ENDPOINTS)
+
+Implement a backend service with the following RESTful API endpoints:
+
+POST /upload
+- Accepts multipart/form-data containing the Candidate CV and Project Report (PDF).
+- Stores these files and returns IDs for later processing.
+
+POST /evaluate
+- Triggers the asynchronous AI evaluation pipeline.
+- Receives input: job title (string) and both document IDs.
+- Immediately returns a job ID to track the evaluation process.
+
+Example Response:
+{
+  "id": "456",
+  "status": "queued"
+}
+
+GET /result/{id}
+- Retrieves the status and result of an evaluation job.
+- Reflects the asynchronous, multi-stage nature of the process.
+
+Possible Responses:
+While queued or processing:
+{
+  "id": "456",
+  "status": "queued" | "processing"
+}
+
+Once completed:
+{
+  "id": "456",
+  "status": "completed",
+  "result": {
+    "cv_match_rate": 0.82,
+    "cv_feedback": "Strong in backend and cloud, limited AI integration experience...",
+    "project_score": 4.5,
+    "project_feedback": "Meets prompt chaining requirements, lacks error handling robustness...",
+    "overall_summary": "Good candidate fit, would benefit from deeper RAG knowledge..."
+  }
+}
+
+
+2. EVALUATION PIPELINE
+
+Design and implement an AI-driven pipeline triggered by the [POST] /evaluate endpoint. 
+It should include the following key components:
+
+RAG (Context Retrieval)
+- Ingest all System-Internal Documents (Job Description, Case Study Brief, Scoring Rubrics) into a vector database.
+- Retrieve relevant sections and inject them into prompts (e.g., “for CV scoring” vs “for Project scoring”).
+
+Prompt Design & LLM Chaining
+The pipeline should consist of:
+
+A. CV Evaluation
+- Parse the candidate’s CV into structured data.
+- Retrieve relevant information from both Job Description and CV Scoring Rubric.
+- Use an LLM to generate: cv_match_rate and cv_feedback.
+
+B. Project Report Evaluation
+- Parse the candidate’s Project Report into structured data.
+- Retrieve relevant information from both Case Study Brief and Project Scoring Rubric.
+- Use an LLM to generate: project_score and project_feedback.
+
+C. Final Analysis
+- Use a final LLM call to synthesize the outputs from previous steps into a concise overall_summary.
+
+Long-Running Process Handling
+- POST /evaluate should not block until LLM chaining finishes.
+- Store the task, return a job ID, and allow GET /result/{id} to check the status later.
+
+Error Handling & Randomness Control
+- Simulate possible edge cases to test service robustness.
+- Simulate failures from LLM APIs (timeouts, rate limits).
+- Implement retries and exponential back-off.
+- Control LLM temperature or add validation layers to stabilize responses.
+
+
+3. STANDARDIZED EVALUATION PARAMETERS
+
+Define the following scoring parameters:
+
+CV Evaluation (Match Rate)
+- Technical Skills Match (backend, databases, APIs, cloud, AI/LLM exposure)
+- Experience Level (years, project complexity)
+- Relevant Achievements (impact, scale)
+- Cultural Fit (communication, learning attitude)
+
+Project Deliverable Evaluation
+- Correctness (prompt design, chaining, RAG, error handling)
+- Code Quality (clean, modular, testable)
+- Resilience (handles failures, retries)
+- Documentation (clear README, explanation of trade-offs)
+- Creativity / Bonus (optional improvements like authentication, deployment, dashboards)
+
+Each parameter should be scored 1–5, then aggregated into the final score.
+
+
+REQUIREMENTS
+-------------
+
+- Use any backend framework (Rails, Django, Node.js, etc.).
+- Use a proper LLM service (OpenAI, Gemini, OpenRouter, etc.).
+- Use a simple vector database (ChromaDB, Qdrant) or RAG-as-a-service (Ragie, S3 Vector, etc.).
+- Provide a README with run instructions and explanations of design choices.
+- Include all documents and ingestion scripts in the repository for reproducibility.

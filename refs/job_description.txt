@@ -1,0 +1,85 @@
+JOB DESCRIPTION - PRODUCT ENGINEER (BACKEND)
+============================================
+
+Rakamin is hiring a Product Engineer (Backend) to work on Rakamin. 
+We’re looking for dedicated engineers who write code they’re proud of and who are eager to keep scaling and improving complex systems, including those powered by AI.
+
+
+ABOUT THE JOB
+--------------
+
+You'll be building new product features alongside a frontend engineer and product manager using our Agile methodology, 
+as well as addressing issues to ensure our apps are robust and our codebase is clean. 
+As a Product Engineer, you'll write clean, efficient code to enhance our product's backend in meaningful ways.
+
+In addition to classic backend work, this role also involves building AI-powered systems, 
+where you’ll design and orchestrate how large language models (LLMs) integrate into Rakamin’s product ecosystem.
+
+
+EXAMPLES OF WORK
+----------------
+
+- Collaborate with frontend engineers and 3rd parties to build robust backend solutions that support configurable platforms and cross-platform integration.
+- Develop and maintain server-side logic for central databases, ensuring high performance throughput and response time.
+- Design and fine-tune AI prompts aligned with product requirements and user contexts.
+- Build LLM chaining flows, where the output from one model is enriched by another.
+- Implement Retrieval-Augmented Generation (RAG) using vector databases to improve accuracy and relevance.
+- Handle long-running AI processes gracefully, including job orchestration, async background workers, and retry mechanisms.
+- Design safeguards for failure cases and manage the randomness of LLM outputs.
+- Use AI tools to increase productivity (AI-assisted code generation, automated QA, internal bots).
+- Write reusable, testable, and efficient code to improve existing systems.
+- Strengthen test coverage with RSpec to ensure reliability.
+- Conduct full product lifecycles: ideation, design, implementation, testing, deployment, and maintenance.
+- Provide input on technical feasibility, timelines, and trade-offs with business divisions.
+- Engage with users and stakeholders to understand their needs and translate them into backend and AI-driven improvements.
+
+
+ABOUT YOU
+----------
+
+We’re looking for candidates with a strong track record of working on backend technologies of web applications, 
+ideally with exposure to AI/LLM development or a strong desire to learn.
+
+You should have experience with:
+
+- Backend languages and frameworks (Node.js, Django, Rails)
+- Database management (MySQL, PostgreSQL, MongoDB)
+- RESTful APIs
+- Security compliance
+- Cloud technologies (AWS, Google Cloud, Azure)
+- Server-side languages (Java, Python, Ruby, JavaScript)
+- Understanding frontend technologies
+- Authentication and authorization between multiple systems and environments
+- Scalable application design principles
+- Database schema design that supports business processes
+- Automated testing platforms and unit tests
+- Familiarity with LLM APIs, embeddings, vector databases, and prompt design best practices
+
+
+WHAT WE VALUE
+--------------
+
+We care about what you can do and how you do it — not your degree or where you studied. 
+You’ll report directly to the CTO and be trusted to deliver impactful work independently.  
+Rakamin values “Managers of One” — people who take initiative, own their work, and deliver with minimal supervision.
+
+This is a remote position.  
+You’re free to work wherever you perform best (home office, co-working space, or coffee shop).  
+To ensure time zone overlap and good communication, we’re only looking for candidates based in Indonesia.
+
+BENEFITS & PERKS
+-----------------
+
+Our benefits support a well-balanced life and your continued growth:
+
+1. Paid Time Off
+   - 17 days of vacation and personal days per year.
+   - Take a day off without a specific reason — whether for rest, travel, or personal time.
+
+2. Learning Benefits (Total Rp29 million/year)
+   - Rp6 million/year for online courses, books, or skill development.
+   - O’Reilly subscription worth Rp8 million/year for access to the latest books and tech content.
+   - Access to all Rakamin Bootcamps & Short Courses worth Rp15 million/year.
+
+3. Device Ownership
+   - Rp7 million/year allowance to purchase devices supporting productivity.
